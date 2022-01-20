@@ -1,0 +1,26 @@
+@use 'variables';
+
+@mixin liens($couleur, $couleur-accent) {
+	color: $couleur;
+	font-weight: bold;
+	outline: none;
+	text-decoration: none;
+
+	&:hover {
+		color: $couleur-accent; 
+		text-decoration: underline;
+	}
+
+	&:focus {
+		color: $couleur-accent;
+		outline: 0.2em dashed $couleur-accent;
+	}
+}
+
+@mixin cartes($couleur, $border-size : 0.2em) {
+	
+	&:hover {
+		border: $border-size solid $couleur;
+	}
+}
+

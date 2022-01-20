@@ -1,0 +1,33 @@
+@use 'variables';
+@use 'mixins'; 
+
+footer {
+	background: variables.$couleur-principale;
+	color: variables.$couleur-blanc;
+	display: flex;
+	opacity: 0;
+	position: relative;
+	width: 100vw;
+
+	p {
+		flex-basis: 100%;
+		text-align: center;
+	}
+
+	a {
+		background-color: variables.$couleur-blanc;
+		border: 0.1em solid variables.$couleur-principale;
+		position: absolute;
+		top: -1.8em;
+		left: 50%; 
+		padding: 0.1em;
+		transform: translate(-50%);
+
+		@include mixins.liens(variables.$couleur-principale, variables.$couleur-accent); 
+	}
+
+	@media screen and (min-width: 992px) {
+		grid-row: 3 / 4;
+		grid-column: 1 / 13;
+	}
+}

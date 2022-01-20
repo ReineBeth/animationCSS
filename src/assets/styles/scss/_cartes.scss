@@ -1,0 +1,39 @@
+@use 'variables'; 
+@use 'mixins';
+
+.carte {
+	cursor: pointer;
+	position: relative;
+
+	&:focus {
+		outline: 0.2em dashed rgba(variables.$couleur-accent, 0.5);
+	}
+
+	&_contenu {
+		position: absolute;
+		left: 0;
+		top: 0;
+		visibility: hidden;
+	}
+
+	&_side-a {
+		figure {
+			@include mixins.cartes(variables.$couleur-accent , 0.5em)
+		}
+	}
+
+	&_side-b {
+		border: 0.2em solid transparent;
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		justify-content: center;
+		margin: 0.5em;
+		@include mixins.cartes(variables.$couleur-accent);
+	}
+
+	&_actif {
+		position: static;
+		visibility: visible;
+	}
+}

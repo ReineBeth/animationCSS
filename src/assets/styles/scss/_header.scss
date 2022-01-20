@@ -1,0 +1,93 @@
+@use 'variables';
+@use 'mixins';
+
+header {
+	width: 100vw;
+
+	.container_header {
+		background: url('../../images/coffre_fort.jpg');
+		background-size: cover;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 110vh;
+		position: relative;
+	}
+
+	nav {
+		background: variables.$couleur-principale;
+		opacity: 0;
+		
+		ul {
+			display: flex;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			margin: 0;
+			padding: 1.5em;
+
+			li {
+				list-style-type: none;
+			}
+
+			a {
+				@include mixins.liens(variables.$couleur-blanc, variables.$couleur-secondaire);
+			}
+		}
+	}
+
+	h1 {
+		color: variables.$couleur-blanc;
+		font-family: variables.$font-titre;
+		font-size: 3em;
+		text-align: center;
+		text-shadow: 1px 1px 2px variables.$couleur-principale,
+					2px 2px 3px variables.$couleur-secondaire,
+					5px 5px 5px variables.$couleur-soutien;
+		animation: rubberBand 2s ease-in-out 1s 1 forwards;
+		
+		&::after {
+			content: "\f155";
+			color: variables.$couleur-noir;
+			font-family: "Font Awesome 5 Free"; 
+			font-size: 4em;
+			font-weight: 900; 
+			position: absolute;
+			left: 50%;
+			top: -100%;
+			text-shadow: 1px 5px 1px variables.$couleur-secondaire;
+			transform: translateX(-50%);
+			z-index: -1;
+		}
+	}
+
+	&::after {
+		content: "\f3be";
+		color: variables.$couleur-blanc;
+		font-family: "Font Awesome 5 Free"; 
+		font-size: 3em;
+		font-weight: 900; 
+		position: absolute;
+		bottom: 1vh;
+		left: 50%;
+		text-shadow: 1px 1px 2px variables.$couleur-principale,
+					 2px 2px 3px variables.$couleur-secondaire,
+					 5px 5px 5px variables.$couleur-soutien;
+		transform: translateX(-50%);
+		animation: 2s ease-in 1s 1 running both bounceInUp;
+	}
+
+	@media screen and (min-width: 992px) {
+		grid-row: 1 / 2;
+		grid-column: 1 / 13;
+
+		h1 {
+			font-size: 5em;
+		}
+
+		&::after {
+			font-size: 5em;
+		}
+	}
+	
+
+}

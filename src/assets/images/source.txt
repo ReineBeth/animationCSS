@@ -1,0 +1,31 @@
+coffre_fort : 	Photo by Jason Dent on Unsplash
+				https://unsplash.com/photos/3wPJxh-piRw
+
+bonnie_clyde : https://fr.wikipedia.org/wiki/Bonnie_et_Clyde#/media/Fichier:Bonnieclyde_f.jpg
+bonnie_clyde_rubik = https://www.pinterest.ca/pin/241013017531535156/
+
+jesse_james : https://www.nationalgeographic.fr/histoire/2020/04/jesse-james-portrait-du-premier-ennemi-public-americain
+jesse_james_jeune : https://www.nationalgeographic.fr/histoire/2020/04/jesse-james-portrait-du-premier-ennemi-public-americain
+
+willie_sutton : https://en.wikipedia.org/wiki/Willie_Sutton
+
+john_dilider : https://fr.wikipedia.org/wiki/John_Dillinger
+
+dalton_anime : https://www.arthur-conan-doyle.com/images/8/8a/2001-les-nouvelles-aventures-de-sherlock-holmes-s01e03-les-dalton-contre-sherlock-holmes-daltons.jpg
+
+dalton_vrai : https://fr.wikipedia.org/wiki/Fr%C3%A8res_Dalton
+
+casa_de_papel : https://file1.telestar.fr/var/telestar/storage/images/3/0/8/5/3085640/la-casa-papel.jpg?alias=original
+
+insaisissable : https://img6.cdn.cinoche.com/images/f268ece4e0948260ef18771f319b9e8b.jpg
+insaisissable_morgan : https://www.premiere.fr/Tele/News-Tele/Influence-par-Christopher-Nolan-Insaisissables-est-divertissant--critique
+
+oceans_eleven : https://m.media-amazon.com/images/M/MV5BYzVmYzVkMmUtOGRhMi00MTNmLThlMmUtZTljYjlkMjNkMjJkXkEyXkFqcGdeQXVyNDk3NzU2MTQ@._V1_.jpg
+
+pay_day : https://variety.com/wp-content/uploads/2014/10/419804.jpg
+
+burgles_bros : https://www.fowers.games/products/burgle-bros
+
+burgles_bros2 : https://www.fowers.games/collections/direct-price/products/burgle-bros-2-german
+
+burgles_bros2_pool : https://www.kickstarter.com/projects/fowers/burgle-bros-2-the-casino-capers/description

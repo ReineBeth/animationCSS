@@ -1,0 +1,462 @@
+@font-face {
+  font-family: "Permanent Marker";
+  src: url("../../fonts/permanentmarker-regular-webfont.woff") format("woff"), url("../../fonts/permanentmarker-regular-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 400;
+  src: url("../../fonts/montserrat-regular-webfont.woff") format("woff"), url("../../fonts/montserrat-regular-webfont.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: url("../../fonts/montserrat-bold-webfont.woff") format("woff"), url("../../fonts/montserrat-bold-webfont.woff2") format("woff2");
+}
+body {
+  background: #BF6956;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  overflow-x: hidden;
+}
+@media screen and (min-width: 992px) {
+  body {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 1fr auto;
+    font-size: 90%;
+  }
+}
+
+header {
+  width: 100vw;
+}
+header .container_header {
+  background: url("../../images/coffre_fort.jpg");
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 110vh;
+  position: relative;
+}
+header nav {
+  background: #172E58;
+  opacity: 0;
+}
+header nav ul {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 1.5em;
+}
+header nav ul li {
+  list-style-type: none;
+}
+header nav ul a {
+  color: #f2f2f2;
+  font-weight: bold;
+  outline: none;
+  text-decoration: none;
+}
+header nav ul a:hover {
+  color: #358C7C;
+  text-decoration: underline;
+}
+header nav ul a:focus {
+  color: #358C7C;
+  outline: 0.2em dashed #358C7C;
+}
+header h1 {
+  color: #f2f2f2;
+  font-family: "Permanent Marker", cursive;
+  font-size: 3em;
+  text-align: center;
+  text-shadow: 1px 1px 2px #172E58, 2px 2px 3px #358C7C, 5px 5px 5px #BF6956;
+  animation: rubberBand 2s ease-in-out 1s 1 forwards;
+}
+header h1::after {
+  content: "\f155";
+  color: #090909;
+  font-family: "Font Awesome 5 Free";
+  font-size: 4em;
+  font-weight: 900;
+  position: absolute;
+  left: 50%;
+  top: -100%;
+  text-shadow: 1px 5px 1px #358C7C;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+header::after {
+  content: "\f3be";
+  color: #f2f2f2;
+  font-family: "Font Awesome 5 Free";
+  font-size: 3em;
+  font-weight: 900;
+  position: absolute;
+  bottom: 1vh;
+  left: 50%;
+  text-shadow: 1px 1px 2px #172E58, 2px 2px 3px #358C7C, 5px 5px 5px #BF6956;
+  transform: translateX(-50%);
+  animation: 2s ease-in 1s 1 running both bounceInUp;
+}
+@media screen and (min-width: 992px) {
+  header {
+    grid-row: 1/2;
+    grid-column: 1/13;
+  }
+  header h1 {
+    font-size: 5em;
+  }
+  header::after {
+    font-size: 5em;
+  }
+}
+
+main {
+  background: #BF6956;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+main h2 {
+  font-family: "Permanent Marker", cursive;
+  position: relative;
+}
+main h2::before {
+  content: "\f6fa";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: -40px;
+  animation: heartBeat 2s ease-in-out 0s infinite both;
+}
+main h2,
+main h3 {
+  text-align: center;
+}
+main p {
+  padding: 1em 3em;
+}
+main figure {
+  border: 0.5em solid transparent;
+  border-radius: 5px;
+  max-width: 500px;
+}
+main figcaption {
+  padding: 1em;
+}
+main img {
+  width: 100%;
+}
+main .section_vrai,
+main .section_fictif,
+main .section_jeux {
+  border: 0.2em solid transparent;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  margin: 3em auto;
+  opacity: 0;
+  width: 85%;
+}
+main .section_vrai .carte_side-a,
+main .section_vrai .carte_side-b,
+main .section_fictif .carte_side-a,
+main .section_fictif .carte_side-b,
+main .section_jeux .carte_side-a,
+main .section_jeux .carte_side-b {
+  display: flex;
+  justify-content: center;
+}
+main .section_vrai,
+main .section_jeux {
+  background: #f2f2f2;
+  border-color: #172E58;
+  border-left: none;
+  border-radius: 0 35px 35px 0;
+  margin-left: 0;
+}
+main .section_vrai a,
+main .section_jeux a {
+  color: #172E58;
+  font-weight: bold;
+  outline: none;
+  text-decoration: none;
+}
+main .section_vrai a:hover,
+main .section_jeux a:hover {
+  color: #A61C28;
+  text-decoration: underline;
+}
+main .section_vrai a:focus,
+main .section_jeux a:focus {
+  color: #A61C28;
+  outline: 0.2em dashed #A61C28;
+}
+main .section_vrai figure,
+main .section_jeux figure {
+  background: #172E58;
+  border-color: #172E58;
+  border-radius: 5px;
+  color: #f2f2f2;
+}
+main .section_fictif {
+  background: #172E58;
+  border-color: #358C7C;
+  border-radius: 35px 0 0 35px;
+  color: #f2f2f2;
+  margin-right: 0;
+}
+main .section_fictif figure {
+  background: #f2f2f2;
+  border-color: #f2f2f2;
+  color: #090909;
+}
+main .section_fictif a {
+  color: #f2f2f2;
+  font-weight: bold;
+  outline: none;
+  text-decoration: none;
+}
+main .section_fictif a:hover {
+  color: #358C7C;
+  text-decoration: underline;
+}
+main .section_fictif a:focus {
+  color: #358C7C;
+  outline: 0.2em dashed #358C7C;
+}
+main .section_jeux .figure_canvas {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  opacity: 0;
+}
+main .section_jeux .figure_canvas canvas {
+  align-self: center;
+}
+main .section_jeux .figure_canvas figcaption {
+  color: #090909;
+}
+@media screen and (min-width: 700px) {
+  main .section_vrai,
+main .section_fictif,
+main .section_jeux {
+    width: 70%;
+  }
+  main .section_vrai figure,
+main .section_fictif figure,
+main .section_jeux figure {
+    width: 60%;
+  }
+}
+@media screen and (min-width: 992px) {
+  main h2 {
+    font-size: 2em;
+  }
+  main h2::before {
+    left: -50px;
+  }
+  main .section_vrai section:last-child {
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1024px) {
+  main {
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas: "vrai vrai vrai . . . . ." "vrai vrai vrai . . . . ." "vrai vrai vrai fictif fictif fictif fictif fictif" "vrai vrai vrai fictif fictif fictif fictif fictif" "vrai vrai vrai . . . . ." "vrai vrai vrai . . . . ." "vrai vrai vrai jeux jeux jeux jeux jeux" ". . . jeux jeux jeux jeux jeux" ". . . jeux jeux jeux jeux jeux";
+  }
+  main h2 {
+    font-size: 2.2em;
+  }
+  main figure {
+    font-size: 0.8em;
+  }
+  main .section_vrai,
+main .section_fictif,
+main .section_jeux {
+    width: 100%;
+  }
+  main .section_vrai {
+    grid-area: vrai;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  main .section_vrai h2 {
+    margin: 2.2em 28%;
+    width: 12ch;
+    white-space: nowrap;
+  }
+  main .section_vrai h2::before {
+    left: -1.5em;
+  }
+  main .section_vrai p {
+    flex-basis: 100%;
+  }
+  main .section_vrai section {
+    width: 50%;
+  }
+  main .section_vrai figure {
+    font-size: 1em;
+    width: 100%;
+  }
+  main .section_fictif {
+    grid-area: fictif;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  main .section_fictif section {
+    align-self: flex-start;
+    width: 30%;
+  }
+  main .section_fictif p {
+    width: 100%;
+  }
+  main .section_fictif h2 {
+    margin: 1em 25%;
+    flex-basis: 15ch;
+    white-space: nowrap;
+  }
+  main .section_fictif h2::before {
+    left: -1.5em;
+  }
+  main .section_fictif figure {
+    min-width: 150px;
+  }
+  main .section_jeux {
+    grid-area: jeux;
+    background: #172E58;
+    border: 0.2em solid #358C7C;
+    border-radius: 35px 0 0 35px;
+    border-right: none;
+    color: #f2f2f2;
+    align-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    place-self: stretch;
+    padding: 1em;
+    margin-right: 0;
+  }
+  main .section_jeux section {
+    align-self: flex-start;
+    width: 45%;
+  }
+  main .section_jeux section figure {
+    margin: 0 auto;
+  }
+  main .section_jeux h2 {
+    margin: 1em 25%;
+    flex-basis: 11ch;
+  }
+  main .section_jeux h2::before {
+    left: -1.5em;
+  }
+  main .section_jeux figure {
+    background: #f2f2f2;
+    border-color: #f2f2f2;
+    border-radius: 5px;
+    color: #090909;
+  }
+  main .section_jeux a {
+    color: #f2f2f2;
+    font-weight: bold;
+    outline: none;
+    text-decoration: none;
+  }
+  main .section_jeux a:hover {
+    color: #358C7C;
+    text-decoration: underline;
+  }
+  main .section_jeux a:focus {
+    color: #358C7C;
+    outline: 0.2em dashed #358C7C;
+  }
+  main .section_jeux .figure_canvas canvas {
+    max-width: 250px;
+  }
+  main .section_jeux .figure_canvas figcaption {
+    color: #f2f2f2;
+  }
+}
+
+footer {
+  background: #172E58;
+  color: #f2f2f2;
+  display: flex;
+  opacity: 0;
+  position: relative;
+  width: 100vw;
+}
+footer p {
+  flex-basis: 100%;
+  text-align: center;
+}
+footer a {
+  background-color: #f2f2f2;
+  border: 0.1em solid #172E58;
+  position: absolute;
+  top: -1.8em;
+  left: 50%;
+  padding: 0.1em;
+  transform: translate(-50%);
+  color: #172E58;
+  font-weight: bold;
+  outline: none;
+  text-decoration: none;
+}
+footer a:hover {
+  color: #A61C28;
+  text-decoration: underline;
+}
+footer a:focus {
+  color: #A61C28;
+  outline: 0.2em dashed #A61C28;
+}
+@media screen and (min-width: 992px) {
+  footer {
+    grid-row: 3/4;
+    grid-column: 1/13;
+  }
+}
+
+.carte {
+  cursor: pointer;
+  position: relative;
+}
+.carte:focus {
+  outline: 0.2em dashed rgba(166, 28, 40, 0.5);
+}
+.carte_contenu {
+  position: absolute;
+  left: 0;
+  top: 0;
+  visibility: hidden;
+}
+.carte_side-a figure:hover {
+  border: 0.5em solid #A61C28;
+}
+.carte_side-b {
+  border: 0.2em solid transparent;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0.5em;
+}
+.carte_side-b:hover {
+  border: 0.2em solid #A61C28;
+}
+.carte_actif {
+  position: static;
+  visibility: visible;
+}

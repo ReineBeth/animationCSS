@@ -1,0 +1,300 @@
+@use 'variables';
+@use 'mixins'; 
+
+main {
+	background: variables.$couleur-soutien;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	
+	h2 {
+		font-family: variables.$font-titre;
+		position: relative;
+
+		&::before {
+			content: "\f6fa";
+			font-family: "Font Awesome 5 Free"; 
+			font-weight: 900; 
+			position: absolute;
+			left: -40px;
+			animation: heartBeat 2s ease-in-out 0s infinite both;
+		}
+	}
+
+	h2,
+	h3 {
+		text-align: center;
+	}
+
+	p {
+		padding: 1em 3em;
+	}
+
+	figure {
+		border: 0.5em solid transparent;
+		border-radius: 5px;
+		max-width: 500px;
+	}
+
+	figcaption {
+		padding: 1em;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	.section_vrai,
+	.section_fictif,
+	.section_jeux {
+		border: 0.2em solid transparent;
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		flex-wrap: nowrap;
+		margin: 3em auto;
+		opacity: 0;
+		width: 85%;
+
+		.carte_side-a,
+		.carte_side-b {
+			display: flex;
+			justify-content: center;
+		}
+	}
+
+	.section_vrai, 
+	.section_jeux {
+
+		background: variables.$couleur-blanc;
+		border-color: variables.$couleur-principale;
+		border-left: none;
+		border-radius: 0 35px 35px 0;
+		margin-left: 0;
+
+		a {
+			@include mixins.liens(variables.$couleur-principale, variables.$couleur-accent);
+		}	
+
+		figure {
+			background: variables.$couleur-principale;
+			border-color:  variables.$couleur-principale;
+			border-radius: 5px;
+			color: variables.$couleur-blanc;
+		}
+	}
+
+	.section_fictif {
+		background: variables.$couleur-principale;
+		border-color: variables.$couleur-secondaire;
+		border-radius: 35px 0 0 35px;
+		color: variables.$couleur-blanc;
+		margin-right: 0;
+		
+		figure {
+			background: variables.$couleur-blanc;
+			border-color: variables.$couleur-blanc;
+			color: variables.$couleur-noir;	
+		}
+
+		a {
+			@include mixins.liens(variables.$couleur-blanc, variables.$couleur-secondaire);
+		}	
+	}
+	
+	.section_jeux {
+		
+		.figure_canvas {
+			background: none;
+			border: none;
+			display: flex;
+			align-items: center;
+			flex-direction: column;
+			opacity: 0;
+
+			canvas {
+				align-self: center;
+			}
+
+			figcaption {
+				color: variables.$couleur-noir;
+			}
+		}
+	}
+
+	@media screen and (min-width: 700px) {
+
+		.section_vrai,
+		.section_fictif,
+		.section_jeux {
+
+			width: 70%;
+
+			figure {
+				width: 60%;
+			}
+		}
+	}
+
+	@media screen and (min-width: 992px) {
+		h2 {
+			font-size: 2em;
+	
+			&::before {
+				left: -50px;
+			}
+		}
+		.section_vrai {
+
+			section:last-child {
+				width: 100%;
+			}	
+		}
+	}
+
+	@media screen and (min-width: 1024px) {
+		display: grid;
+		gap: 1em;
+		grid-template-columns: repeat(8, 1fr);
+		grid-template-areas: 'vrai vrai vrai . . . . .'
+							 'vrai vrai vrai . . . . .'
+							 'vrai vrai vrai fictif fictif fictif fictif fictif'
+							 'vrai vrai vrai fictif fictif fictif fictif fictif'
+							 'vrai vrai vrai . . . . .'
+							 'vrai vrai vrai . . . . .'
+							 'vrai vrai vrai jeux jeux jeux jeux jeux'
+							 '. . . jeux jeux jeux jeux jeux'
+							 '. . . jeux jeux jeux jeux jeux';
+
+		h2{ 
+			font-size: 2.2em;
+		}
+
+		figure {
+			font-size: 0.8em;
+		}
+
+		.section_vrai,
+		.section_fictif,
+		.section_jeux {
+			width: 100%;
+		}
+
+		.section_vrai {
+			grid-area: vrai;
+			flex-wrap: wrap;
+			flex-direction: row;
+
+			h2 {
+				margin: 2.2em 28%;
+				width: 12ch; 
+				white-space: nowrap;
+
+				&::before {
+					left: -1.5em;
+				}
+			}
+
+			p {
+				flex-basis: 100%;
+			}
+
+			section {
+				width: 50%;
+			}
+
+			figure {
+				font-size: 1em;
+				width: 100%;
+			}
+
+		}
+		
+		.section_fictif {
+			grid-area: fictif;
+			align-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+
+			section {
+				align-self: flex-start;
+				width: 30%;
+			}
+
+			p {
+				width: 100%;
+			}
+
+			h2 {
+				margin: 1em 25%;
+				flex-basis: 15ch;
+				white-space: nowrap;
+
+				&::before {
+					left: -1.5em;
+				}
+			}
+
+			figure {
+				min-width: 150px;
+			}
+		}
+
+		.section_jeux {
+			grid-area: jeux;
+			background: variables.$couleur-principale;
+			border: 0.2em solid variables.$couleur-secondaire;
+			border-radius: 35px 0 0 35px;
+			border-right: none;
+			color: variables.$couleur-blanc;
+			align-content: center;
+			flex-direction: row;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			place-self: stretch; 
+			padding: 1em;
+			margin-right: 0;
+
+			section {
+				align-self: flex-start;
+				width: 45%;
+				
+				figure {
+					margin: 0 auto;
+				}
+			}
+
+			h2 {
+				margin: 1em 25%;
+				flex-basis: 11ch;
+
+				&::before {
+					left: -1.5em;
+				}
+			}
+
+			figure {
+				background: variables.$couleur-blanc;
+				border-color: variables.$couleur-blanc;
+				border-radius: 5px;
+				color: variables.$couleur-noir;	
+			}
+	
+			a {
+				@include mixins.liens(variables.$couleur-blanc, variables.$couleur-secondaire);
+			}	
+
+			.figure_canvas {
+
+				canvas {
+					max-width: 250px;
+				}
+
+				figcaption {
+					color: variables.$couleur-blanc;
+				}
+			}
+		}
+	}
+}
